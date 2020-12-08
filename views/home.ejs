@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../styles/home.css">
+    <script src="https://kit.fontawesome.com/5c174d451e.js" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <nav class="nav container">
+        <div class="corner-img">
+            <img src="../styles/img/corner-img.webp">
+            <p><a href="/home">Home</a></p>
+        </div>
+        <ul>
+            <a href="orders">My orders</a>
+            <a onclick="finaladd()" href="/cart" >Cart<i class="fas fa-cart"></i></a>
+            <a href="/home#scrollhere">Buy Now</a>
+            <a href="/login">Login</a>
+            <a href="/logout">Logout</a>
+        </ul>
+    </nav>
+    
+    <div class="showcase container">
+        <h1></h1>
+        <h1 style="margin-bottom: 25px;">Buy All Your Favourite Football Gears Now</h1>
+        <a href="#scrollhere" class="btnbg" >Buy Now</a>
+    </div>
+
+    <hr>
+    
+    <p id="alertmsg">Product is added</p>
+    <div class="container">
+        <div class="searchbar" id="scrollhere">
+            <h2 >What would you like to Buy?</h2>
+            <datalist id="suggestions">
+                <option>Football</option>
+                <option>Studs</option>
+                <option>Stockings</option>
+                <option>Jersey</option>
+                <option>Shins And guards</option>
+            </datalist>
+            <input autoComplete="on" list="suggestions" placeholder="Search" id="searchres"> 
+        </div>
+        <div class=" product football">
+            <datalist id="footballssize">
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+            </datalist>
+            <div>
+                <img src="../styles/img/football1.jpg">
+                <p class="id">1</p>
+                <p>SMT MUFC Hand Stiched </p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="footballssize" placeholder="Select Size" id="footballsize" class="size"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/football2.jpg">
+                <p class="id">2</p>
+                <p>Volatility Uniforia Euro 2020 </p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="footballssize" placeholder="Select Size" id="footballsize" class="size"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/football3.jpg">
+                <p class="id">3</p>
+                <p>Volatility FCB Hand Stich</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="footballssize" placeholder="Select Size" id="footballsize" class="size"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/football4.jpg">
+                <p class="id">4</p>
+                <p>Volatility CR7 Hand Stich</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="footballssize" placeholder="Select Size" id="footballsize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/football5.jpg">
+                <p class="id">5</p>
+                <p>RASON Rubber Football</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="footballssize" placeholder="Select Size" id="footballsize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/football6.jpg">
+                <p class="id">6</p>
+                <p>RASCO FOOTBALL BLUE STAR</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="footballssize" placeholder="Select Size" id="footballsize" class="size"> 
+                <button class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/football7.jpg">
+                <p class="id">7</p>
+                <p>RASCO 4 COLOR FOOTBALL</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="footballssize" placeholder="Select Size" id="footballsize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/football8.jpg">
+                <p class="id">8</p>
+                <p>SMT MUFC Hand Stiched</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="footballssize" placeholder="Select Size" id="footballsize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/football9.jpg">
+                <p class="id">9</p>
+                <p>RASON Combo Hand Stitched</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="footballssize" placeholder="Select Size" id="footballsize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/football10.jpg">
+                <p class="id">10</p>
+                <p>SMT Hand Stiched Football </p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="footballssize" placeholder="Select Size" id="footballsize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/football11.jpg">
+                <p class="id">11</p>
+                <p>SMT Champion League Polyester Football</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="footballssize" placeholder="Select Size" id="footballsize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/football12.jpg">
+                <p class="id">12</p>
+                <p>SMT Fcb Hand Stiched Football</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="footballssize" placeholder="Select Size" id="footballsize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+        </div>
+
+        <datalist id="jerseyssize">
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+            <option>Xtra Large</option>
+        </datalist>
+
+        <div class=" product jersey">
+            <div>
+                <img src="../styles/img/jersey1.jpg">
+                <p class="id">13</p>
+                <p>ufa Barcelona Football Jersey </p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="jerseyssize" placeholder="Select Size" id="jerseysize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/jersey2.jpg">
+                <p class="id">14</p>
+                <p>JS - Juventus Football Jersey</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="jerseyssize" placeholder="Select Size" id="jerseysize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/jersey3.jpg">
+                <p class="id">15</p>
+                <p>amf Football Juventus Jersey</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="jerseyssize" placeholder="Select Size" id="jerseysize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/jersey4.jpg">
+                <p class="id">16</p>
+                <p>Amf Yellow Brazil Football Jersey </p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="jerseyssize" placeholder="Select Size" id="jerseysize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/jersey5.jpg">
+                <p class="id">17</p>
+                <p>uniq Boy's Jersey T-Shirt</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="jerseyssize" placeholder="Select Size" id="jerseysize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/jersey6.jpg">
+                <p class="id">18</p>
+                <p>ufa Manchester City Jersey</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="jerseyssize" placeholder="Select Size" id="jerseysize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/jersey7.jpg">
+                <p class="id">19</p>
+                <p>uniq Ronaldo Jersey</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="jerseyssize" placeholder="Select Size" id="jerseysize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/jersey8.jpg">
+                <p class="id">20</p>
+                <p>Amf Liverpool Jersey </p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="jerseyssize" placeholder="Select Size" id="jerseysize" class="size"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/jersey9.jpg">
+                <p class="id">21</p>
+                <p>uniq Chelsea Jersey</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="jerseyssize" placeholder="Select Size" id="jerseysize" class="size"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/jersey10.jpg">
+                <p class="id">22</p>
+                <p>ufa PSG  Jersey</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="jerseyssize" placeholder="Select Size" id="jerseysize" class="size"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/jersey11.jpg">
+                <p class="id">23</p>
+                <p>Argentina Jersey </p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="jerseyssize" placeholder="Select Size" id="jerseysize" class="size"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/jersey12.jpg">
+                <p class="id">24</p>
+                <p>Football Man u Home Jersey</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="jerseyssize" placeholder="Select Size" id="jerseysize" class="size"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/jersey13.jpg">
+                <p class="id">25</p>
+                <p>Home Football Liverpool </p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="jerseyssize" placeholder="Select Size" id="jerseysize" class="size"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/jersey14.jpg">
+                <p class="id">26</p>
+                <p>Madrid Football Jersey </p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="jerseyssize" placeholder="Select Size" id="jerseysize" class="size"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/jersey16.jpg">
+                <p class="id">27</p>
+                <p>T-soot Jersey Football</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="jerseyssize" placeholder="Select Size" id="jerseysize" class="size"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+        </div>
+
+        <div class="product studs">
+            <datalist id="studssize">
+                <option>5 (UK)</option><option>6</option><option>7</option><option>8</option>
+                <option>9</option><option>10</option><option>11</option><option>12</option>
+            </datalist>
+            <div>
+                <img src="../styles/img/studs1.jpg">
+                <p class="id">28</p>
+                <p>Premier Carbonite 2.0 Football Stud </p>
+                <p><i class="fa fa-inr"></i>100</p> 
+                <input autoComplete="on" list="studssize" class="size" placeholder="Select Size" id="studsize"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/studs2.jpg">
+                <p class="id">29</p>
+                <p>Nivia 454O Synthetic Carbonite Football Stud</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="studssize" class="size" placeholder="Select Size" id="studsize"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/studs3.jpg">
+                <p class="id">30</p>
+                <p>Vector X Trident Synthetic Football Stud</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="studssize" class="size" placeholder="Select Size" id="studsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img style="height: 140px;" src="../styles/img/studs4.jpg">
+                <p class="id">31</p>
+                <p>Vector X NXG Football Studs</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="studssize" class="size" placeholder="Select Size" id="studsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/studs16.jpg">
+                <p class="id">32</p>
+                <p>Nivia Premier Carbonite Football Stud</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="studssize" class="size" placeholder="Select Size" id="studsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/studs6.jpg">
+                <p class="id">33</p>
+                <p>Nivia Ashtang Football Stud</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="studssize" class="size" placeholder="Select Size" id="studsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/studs7.jpg">
+                <p class="id">34</p>
+                <p>Nivia 1229BK Airstrike Football Stud</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="studssize" class="size" placeholder="Select Size" id="studsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/studs8.jpg">
+                <p class="id">35</p>
+                <p>Nivia Blaze Football Stud </p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="studssize" class="size" placeholder="Select Size" id="studsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img style="height: 170px;" src="../styles/img/studs9.jpg">
+                <p class="id">36</p>
+                <p>TRADY Ultimate CR7 Studs</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="studssize" class="size" placeholder="Select Size" id="studsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/studs10.jpg">
+                <p class="id">37</p>
+                <p>Nike Hypervenom Phantom Football Boots</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="studssize"  class="size" placeholder="Select Size" id="studsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/studs11.jpg">
+                <p class="id">38</p>
+                <p>Grafter Ultimate Synthetic Football Studs</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="studssize" class="size" placeholder="Select Size" id="studsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/studs12.jpg">
+                <p class="id">39</p>
+                <p>Puma Rapido Black-Shocking Football Stud</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="studssize" class="size" placeholder="Select Size" id="studsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/studs13.jpg">
+                <p class="id">40</p>
+                <p>Vector X Hybrid Green Football Stud</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="studssize"  class="size" placeholder="Select Size" id="studsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/studs14.jpg">
+                <p class="id">41</p>
+                <p>Feroc Men's Football Stud </p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="studssize" class="size" placeholder="Select Size" id="studsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/studs15.jpg">
+                <p class="id">42</p>
+                <p>Nivia Dominator Football Stud</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="studssize"  class="size" placeholder="Select Size" id="studsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+        </div>
+
+        <datalist id="shinstockings">
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+        </datalist>
+
+        <div class=" product stockings">
+            <div>
+                <img style="height: 494px;" src="../styles/img/stokings1.jpg">
+                <p class="id">43</p>
+                <p>Nivia 728MBW Encounter Blend Stockings</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="stockingsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img style="height: 490px;"  src="../styles/img/stokings2.jpg">
+                <p class="id">44</p>
+                <p>Nivia Soccer Stockings</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="stockingsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/stokings3.jpg">
+                <p class="id">45</p>
+                <p>Nivia Soccer Stockings</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="stockingsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img style="height: 480px;"  src="../styles/img/stokings4.jpg">
+                <p class="id">46</p>
+                <p>Nivia Plain Encounter Stockings </p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="stockingsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img style="height: 460px;"  src="../styles/img/stokings5.jpg">
+                <p class="id">47</p>
+                <p>JUST RIDER Bamboo Football Stockings</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="stockingsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/stokings6.jpg">
+                <p class="id">48</p>
+                <p>Never Lose Professional Series Soccer Stockings</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="stockingsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img style="height: 430px;"  src="../styles/img/stokings7.jpg">
+                <p class="id">49</p>
+                <p>Nivia 725RB Encounter Blend Stockings</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="stockingsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/stokings8.jpg">
+                <p class="id">50</p>
+                <p>Nivia 725NW Encounter Blend Stockings</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="stockingsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img style="height: 430px;" src="../styles/img/stokings9.jpg">
+                <p class="id">51</p>
+                <p>Sports Hour Cotton Football Stockings</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="stockingsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img style="height: 320px;" src="../styles/img/stokings10.jpg">
+                <p class="id">52</p>
+                <p>Nivia 728LRB Encounter Blend</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="stockingsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/stokings11.jpg">
+                <p class="id">53</p>
+                <p>NIVIA Encounter Stockings</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="stockingsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img style="height: 320px;" src="../styles/img/stokings12.jpg">
+                <p class="id">54</p>
+                <p>Nivia 728MRW Encounter Blend Stockings</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="stockingsize">
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+        </div>
+        
+
+        <div class=" product shin">
+            <div>
+                <img  style="height: 240px;" src="../styles/img/shin1.jpg">
+                <p class="id">55</p>
+                <p>Nivia SG-806 Performance Football Shin </p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="shinsize"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img  src="../styles/img/shin2.jpg">
+                <p class="id">56</p>
+                <p>Nivia SG-756 Classic Football Guard</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="shinsize"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/shin3.jpg">
+                <p class="id">57</p>
+                <p>Vector X Brazil Shin pad</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings"  class="size" placeholder="Select Size" id="shinsize"> 
+                <button onclick="add(this,'<%=username%>')"  class="btn">Add</button>
+            </div>
+            <div>
+                <img  src="../styles/img/shin4.jpg">
+                <p class="id">58</p>
+                <p>Nivia Classic Shin Guard </p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size"  placeholder="Select Size" id="shinsize"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img style="height: 300px;"  src="../styles/img/shin5.jpg">
+                <p class="id">59</p>
+                <p>Nivia 418M Lycra-Spandex Shin Guard</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="shinsize"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/shin6.jpg">
+                <p class="id">60</p>
+                <p>Vector X Shin Pads France</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="shinsize"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img style="height: 180px;"  src="../styles/img/shin7.jpg">
+                <p class="id">61</p>
+                <p>Vector X BRAZIL Shin Pads</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="shinsize"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img src="../styles/img/shin8.jpg">
+                <p class="id">62</p>
+                <p>Vector X Liverpool Shin Guard </p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="shinsize"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+            <div>
+                <img style="height: 180px;" src="../styles/img/shin9.jpg">
+                <p class="id">63</p>
+                <p>Cosco Impact Shin Guard</p>
+                <p><i class="fa fa-inr"></i>100</p>
+                <input autoComplete="on" list="shinstockings" class="size" placeholder="Select Size" id="shinsize"> 
+                <button onclick="add(this,'<%=username%>')" class="btn">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-cols">
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Ways To Watch</a></li>
+                    <li><a href="#">Corporate Information</a></li>
+                    <li><a href="#">Netflix Originals</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a class="main" href="#">BY</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Redeem Gift Cards</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li ><a href="#">Speed Test</a></li>
+                    <li><a class="main" href="#">SHUBHAM</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Media Center</a></li>
+                    <li><a href="#">Buy Gift Cards</a></li>
+                    <li><a href="#">Cookie Preferences</a></li>
+                    <li><a href="#">Legal Notices</a></li>
+                    <li><a class="main" href="#">SURVE</a></li>
+                </ul>
+            </div>
+    </footer>
+ 
+</body>
+</html>
+<script src="../styles/home.js"></script>

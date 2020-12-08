@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5c174d451e.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+    .list{
+        list-style-type:none;
+        border:1px solid red;
+        padding:8px 10px;
+        color: black;
+        justify-content: space-around;
+    }
+
+    i{
+        float:right;
+        color:red;
+    }
+</style>
+<body>
+    <%if(typeof errors != 'undefined'){%>
+        <ul>
+        <%errors.forEach((i)=>{%>
+            <li class="list"><%=i.msg%><i onclick="nikal(this)" class="fa fa-remove "></i></li>
+        <%})%>
+        </ul>
+    <%}%>
+
+</body>
+<script>
+    function nikal(e){
+        e.parentElement.remove();        
+    }
+</script>
+</html>

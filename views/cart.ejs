@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../styles/cart.css">
+    <script src="https://kit.fontawesome.com/5c174d451e.js" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<style>
+</style>
+<body>
+    <nav class="nav container">
+        <div class="corner-img">
+            <img src="../styles/img/corner-img.webp">
+            <p><a href="/home">Home</a></p>
+        </div>
+        <ul>
+            <a href="orders">My orders</a>
+            <a href="/cart" >Cart<i class="fas fa-cart"></i></a>
+            <a href="/home#scrollhere">Buy Now</a>
+            <a href="/login">Login</a>
+            <a href="/logout">Logout</a>
+        </ul>
+    </nav>
+    <div>
+        <div class="summary">
+            <h2>Order Summary</h2>
+        </div>
+        <%if(typeof userdata!='undefined'){%>
+            
+            <table class="nav table">
+                <tr>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                <%var total=0%>
+                <%userdata.products.forEach((product)=>{%>
+                    <tr>
+                        <td><%=product.name%><br><strong>Size:<%=product.size%></strong></td>
+                        <td><img style="width: 100px;" src="<%=product.img%>"></td>
+                        <%const price=product.price%>
+                        <%const quantity=product.quantity%>
+                        <td class="dropdown">
+                            <button id="quantity">Qty:<%=quantity%><i class="fas fa-caret-down"></i></button>
+                            <div class="dropdown-content">
+                                <a onclick="updatequantity1(this,'<%=userdata.username%>','<%=product.id%>')" >1</a>
+                                <a onclick="updatequantity2(this,'<%=userdata.username%>','<%=product.id%>')" >2</a>
+                                <a onclick="updatequantity(this,'<%=userdata.username%>','<%=product.id%>')" >more</a>
+                            </div>
+                        </td>
+                        
+                        <td><i class="fa fa-inr"></i> <%=price%></td>
+                        <td><strong style="display: none;"><%=product.id%></strong><i onclick="rimu(this,'<%=userdata.username%>')" class="fa fa-remove remu"></i></td>
+                        <%total=total+(price*quantity)%>
+                    </tr>
+                <%})%>
+            </table>
+            <div class="summary">
+                <h3>Total Amount: <i class="fa fa-inr"></i> <span id="totalamount"><%=total%></span></h3>
+                <button class="purchase">Purchase</button>
+            </div>
+        <%}else{%>
+            <table class="nav table">
+                <tr>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </table>
+        <%}%>
+    
+    </div>
+    <div class="inputbox">
+        <input name="quantity" placeholder="Enter quantity">
+        <button class="inputboxbtn" id="cancel">Cancel</button>
+        <button class="inputboxbtn" id="apply">Apply</button>
+    </div>
+</body>
+</html>
+<script src="/styles/cart.js"></script>
