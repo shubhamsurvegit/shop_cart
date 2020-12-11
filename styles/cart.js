@@ -130,7 +130,7 @@ function updatequantity2(e,username,product_id){
     document.getElementById('totalamount').innerHTML=totalamount
 }
 
-document.querySelector('.purchase').addEventListener('click',()=>{
-    console.log("ASd")
-    alert("your order is placed")
-})
+// document.querySelector('.purchase').addEventListener('click',()=>{
+//     console.log("ASd")
+//     alert("your order is placed")
+// })
