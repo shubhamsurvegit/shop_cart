@@ -166,3 +166,10 @@ th{
     background-color: #ddd;
     display: block;
 }
+
+
+@media screen and (max-width:700px){
+    .nav{
+        max-width: 40%;
+    }
+}

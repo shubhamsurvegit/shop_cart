@@ -12,14 +12,30 @@ const Userschema=new mongoose.Schema({
         type:"String",
         required:true
     },
-    products:[{
-        id:Number,
-        img:String,
-        name:String,
-        size:String,
-        quantity:Number,
-        price:Number
-    }],
+    order_details:{
+        totalcost:{
+            type:"Number",
+
+        },
+        address:{
+            type:"String",
+
+        },
+        products:[{
+            id:Number,
+            img:String,
+            name:String,
+            size:String,
+            quantity:Number,
+            price:Number
+        }],
+        payment_method:{
+            type:String
+        },
+        payment_detail:{
+            type:Object
+        }
+    },
     date:{
         type:Date,
         default:Date.now

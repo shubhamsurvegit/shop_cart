@@ -1,0 +1,6 @@
+const keys={
+    Publishable_key:"pk_test_51HY7eBLXvUk3ZE2kg93zIlH67ftUxoZYGRcem3mddQocLZz3LKwzn1GtPSSNu8GQH4ZJg1Icj4n3HCltZIrfkkZS00incutQb6",
+    Private_key:"sk_test_51HY7eBLXvUk3ZE2kQddnLPrXtFe40ST28tahw4xrzCXfeGOAjlaewqZjkzEUvda2HOTH9oem61Z2IRzzF9kWDEgC008g4piumq"
+}
+
+module.exports=keys;

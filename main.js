@@ -7,8 +7,11 @@ app.set('view engine','ejs');
 
 app.use('/styles',express.static('styles'))
 app.use(session({secret: "Shh, its a secret!",resave:false}));
-// const url="mongodb://localhost:27017/cart";
-const url = "mongodb+srv://akash:akash1234@cluster0.4ayge.mongodb.net/cart?retryWrites=true&w=majority";
+
+const url="mongodb://localhost:27017/cart";
+// const url = "mongodb+srv://akash:akash1234@cluster0.4ayge.mongodb.net/cart?retryWrites=true&w=majority";
+const Publishable_key="pk_test_51HY7eBLXvUk3ZE2kg93zIlH67ftUxoZYGRcem3mddQocLZz3LKwzn1GtPSSNu8GQH4ZJg1Icj4n3HCltZIrfkkZS00incutQb6"
+const Private_key="sk_test_51HY7eBLXvUk3ZE2kQddnLPrXtFe40ST28tahw4xrzCXfeGOAjlaewqZjkzEUvda2HOTH9oem61Z2IRzzF9kWDEgC008g4piumq"
 
 mongoose.connect(url,{useNewUrlParser:true})
 .then(()=>console.log("mongo db connected"))
@@ -18,9 +21,8 @@ app.use('/',require('./routes/authenticate'))
 
 app.use('/',require('./routes/cart'))
 
-app.use("", (req, res) => {
-    res.render("home");
-})
+app.use('/',require('./routes/payment'))
+
 
 app.use('/',require('./routes/payment'))
 

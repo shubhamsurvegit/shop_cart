@@ -12,6 +12,7 @@ router.get('/home',(req,res)=>{
 });
 
 router.get('/login',(req,res)=>res.render('login'));
+
 router.get('/register',(req,res)=>{
     res.render('register',{data:false})
 })
@@ -23,9 +24,12 @@ router.post('/register',bodyparserurl,(req,res)=>{
         email:req.body.email,
         password:req.body.password,
         confirmpassword:req.body.confirmpassword,
-        products:[
-                
-        ]
+        order_details:{
+            totalcost:0,
+            address:'',
+            products:[
+            ],
+        }
     }
     if(!data.username || !data.email || !data.password || !data.confirmpassword){
         errors.push({msg:"Please fill in all fields"});
