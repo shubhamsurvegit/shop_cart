@@ -25,6 +25,7 @@ function getdetail(){
                 }
             }
         });
+        window.location="http://localhost:5000/myorders"
     }
     else{
         const address={
@@ -47,5 +48,24 @@ function getdetail(){
         });
         window.location="http://localhost:5000/payment"
     }
+}
 
+
+function change1(e){
+    console.log(e.checked)
+    if(e.checked){
+        e.checked="false";
+    }
+    else{
+        e.checked="true"
+    }
+}
+
+function change2(e){
+    if(e.checked){
+        e.checked=false;
+    }
+    else{
+        e.checked=true
+    }
 }

@@ -29,7 +29,10 @@ router.post('/register',bodyparserurl,(req,res)=>{
             address:'',
             products:[
             ],
-        }
+        },
+        my_orders:[
+
+        ]
     }
     if(!data.username || !data.email || !data.password || !data.confirmpassword){
         errors.push({msg:"Please fill in all fields"});
@@ -81,26 +84,31 @@ router.post('/login',bodyparserurl,(req,res)=>{
         res.render('login',{errors:errors});
     }
     else{
-        User.findOne({username:data.username})
-        .then((userdata)=>{
-            if(userdata){
-                bcrypt.compare(data.password,userdata.password,(err,isMatch)=>{
-                    if(isMatch){
-                        req.session.username=data.username;
-                        res.redirect('/home');
-                    }
-                    else{
-                        errors.push({msg:"Incorrect Password"});
-                        res.render('login',{errors:errors});
-                    }
-                })
-            }
-            else{
-                errors.push({msg:"User does not exist"})
-                res.render('login',{errors:errors})
-            }
-        })
-        .catch((err)=>res.send(err));
+        if(data.username=='admin' && data.password==1){
+            res.redirect("/admin/home")
+        }
+        else{
+            User.findOne({username:data.username})
+            .then((userdata)=>{
+                if(userdata){
+                    bcrypt.compare(data.password,userdata.password,(err,isMatch)=>{
+                        if(isMatch){
+                            req.session.username=data.username;
+                            res.redirect('/home');
+                        }
+                        else{
+                            errors.push({msg:"Incorrect Password"});
+                            res.render('login',{errors:errors});
+                        }
+                    })
+                }
+                else{
+                    errors.push({msg:"User does not exist"})
+                    res.render('login',{errors:errors})
+                }
+            })
+            .catch((err)=>res.send(err));
+        }
     }
 })
 

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/css" href="../styles/home.css">
+</head>
+<style>
+    .table{
+    margin:auto;
+    margin-bottom: 10px;
+    width: 80%;
+    border-spacing: 0 4px;
+}
+
+.table img{
+    width: 100px;
+    height: 100px;
+    
+}
+
+tr{
+    margin: 10px;
+    background-color: #f2f2f2;
+}
+
+th,td ,tr{
+    padding: 20px 55px;
+}
+
+th{
+    font-size: 20px;
+}
+</style>
+<body>
+    <nav class="nav container">
+        <div class="corner-img">
+            <img src="../styles/img/corner-img.webp">
+            <p><a href="/admin/home">Home</a></p>
+        </div>
+        <ul>
+            <a onclick="finaladd()" href="/admin/orders" >Orders<i class="fas fa-cart"></i></a>
+            <a href="/Delivered Orders">Delivered Orders</a>
+            <a href="/login">Login</a>
+            <a href="/logout">Logout</a>
+        </ul>
+    </nav>
+    <%if(typeof orders!='undefined'){%>
+    <div>
+        <table class="table">
+            <%orders.forEach((order)=>{%>
+                <tr>
+                    <td><a href="/admin/trackorder?id=<%=order.order_id%>"><%=order.order_id%></a></td>
+                    <td><%=order.username%></td>
+                    <td><%=order.order_details.status%></td>
+                    <td>
+                        <%if(order.order_details.status=="Ordered"){%>
+                            <select onchange="fun(this)" id="status">
+                                <option selected value="Ordered">Ordered</option>
+                                <option value="Confirmed">Confirmed</option>
+                                <option value="Shipped">Shipped</option>
+                                <option value="Out For Delivery">Out For Delivery</option>
+                                <option value="Delivered" >Delivered</option>
+                            </select>
+                        <%}else if(order.order_details.status=="Confirmed" ){%>
+                            <select onchange="fun(this)" id="status">
+                                <option value="Ordered">Ordered</option>
+                                <option selected value="Confirmed">Confirmed</option>
+                                <option value="Shipped">Shipped</option>
+                                <option value="Out For Delivery">Out For Delivery</option>
+                                <option value="Delivered" >Delivered</option>
+                            </select>
+                        <%}else if(order.order_details.status=="Shipped"){%>
+                            <select onchange="fun(this)" id="status">
+                                <option value="Ordered">Ordered</option>
+                                <option value="Confirmed">Confirmed</option>
+                                <option selected value="Shipped">Shipped</option>
+                                <option value="Out For Delivery">Out For Delivery</option>
+                                <option value="Delivered" >Delivered</option>
+                            </select>
+                        <%}else if(order.order_details.status=="Out For Delivery"){%>
+                            <select onchange="fun(this)" id="status">
+                                <option value="Ordered">Ordered</option>
+                                <option value="Confirmed">Confirmed</option>
+                                <option value="Shipped">Shipped</option>
+                                <option selected value="Out For Delivery">Out For Delivery</option>
+                                <option value="Delivered" >Delivered</option>
+                            </select>
+                        <%}else{%>
+                            <select onchange="fun(this)" id="status">
+                                <option value="Ordered">Ordered</option>
+                                <option value="Confirmed">Confirmed</option>
+                                <option value="Shipped">Shipped</option>
+                                <option value="Out For Delivery">Out For Delivery</option>
+                                <option selected value="Delivered" >Delivered</option>
+                            </select>
+                        <%}%>
+                    </td>
+                </tr>
+            <%})%>
+        </table>
+    </div>
+    <%}else{%>
+        <div class="container">
+            <img width="1080px" height="700px" src="../styles/img/bgimg.jpg">
+        </div>
+    <%}%>
+</body>
+</html>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/styles/admin_home.js"></script>
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../styles/track.css">
+    <script src="https://kit.fontawesome.com/5c174d451e.js" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <nav class="nav container">
+        <div class="corner-img">
+            <img src="../styles/img/corner-img.webp">
+            <p><a href="/home">Home</a></p>
+        </div>
+        <ul>
+            <a href="myorders">My orders</a>
+            <a onclick="finaladd()" href="/cart" >Cart<i class="fas fa-cart"></i></a>
+            <a href="/home#scrollhere">Buy Now</a>
+            <a href="/login">Login</a>
+            <a href="/logout">Logout</a>
+        </ul>
+    </nav>
+    <div class="contain" >
+        <div class="detail">
+            <p>Order Id-  <%=order._id%></p>
+            <table>
+                    
+                <%order.order_details.products.forEach(product=>{%>
+                        <tr>
+                        <th><img src="<%=product.img%>"></th>
+                        <th><%=product.name%></th>
+                        <th><%=product.quantity%>x</th>
+                        <th><i class="fa fa-inr"><%=product.price%></i></th>
+                        </tr>
+                <%})%>
+                </table>
+            <p>Total cost  <i class="fa fa-inr"></i>  <%=order.order_details.totalcost%></p>
+            <p><%=order.order_details.address%></p>
+            <p><%=order.order_details.payment_method%></p>
+            <p><%=order.date%></p>
+            <p><%=order.email%></p>
+        </div>
+    </div>
+</body>
+</html>
+

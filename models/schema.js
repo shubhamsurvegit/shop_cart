@@ -34,8 +34,35 @@ const Userschema=new mongoose.Schema({
         },
         payment_detail:{
             type:Object
-        }
+        },
+        status:{
+            type:String
+        },
     },
+    myorders:[{
+        totalcost:{
+            type:"Number",
+
+        },
+        address:{
+            type:"String",
+
+        },
+        products:[{
+            id:Number,
+            img:String,
+            name:String,
+            size:String,
+            quantity:Number,
+            price:Number
+        }],
+        payment_method:{
+            type:String
+        },
+        status:{
+            type:String
+        },
+    }],
     date:{
         type:Date,
         default:Date.now

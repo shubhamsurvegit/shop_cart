@@ -46,9 +46,35 @@
     color:orange;
 }
 
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+
+.nav{
+    background-color: #f2f2f2f2;
+    height: 80px;
+}
+
+nav ul{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap:40px;
+    align-items: center;
+    justify-content: end;
+    margin:0px 20px 0px 0px;
+    padding-top:40px ;
+
+}
 .nav a{
     text-decoration: none;
-    color: #000;
+    list-style-type: none;
+    color:black;
+}
+
+.nav a:hover{
+    color:orange;
 }
 
 .container{

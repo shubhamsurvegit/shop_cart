@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../styles/myorders.css">
+    <script src="https://kit.fontawesome.com/5c174d451e.js" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <nav class="nav container">
+        <div class="corner-img">
+            <img src="../styles/img/corner-img.webp">
+            <p><a href="/home">Home</a></p>
+        </div>
+        <ul>
+            <a href="myorders">My orders</a>
+            <a onclick="finaladd()" href="/cart" >Cart<i class="fas fa-cart"></i></a>
+            <a href="/home#scrollhere">Buy Now</a>
+            <a href="/login">Login</a>
+            <a href="/logout">Logout</a>
+        </ul>
+    </nav>
+
+    <div class="summary">
+        <h2>Your orders</h2>
+    </div>
+    <table class="table">
+        <!-- <tr>
+            <th>Id</th>
+            <th>
+                <table>
+                    <tr>
+                        <th>Img</th>
+                        <th>Name</th>
+                    </tr>
+                </table>
+            </th>
+            <th>Status</th>
+        </tr> -->
+        <%userdata.myorders.forEach((order)=>{%>
+            <tr>
+                <th><a id="id" href="/trackorder?id=<%=order._id%>"><%=order._id%></a></th>
+                <th>
+                    <table>
+                    
+                    <%order.products.forEach(product=>{%>
+                            <tr>
+                            <th><img src="<%=product.img%>"></th>
+                            <th><%=product.name%></th>
+                            </tr>
+                    <%})%>
+                    </table>
+                </th>
+                <th>Dilivered</th>
+            </tr>
+        <%})%>
+    </table>
+</body>
+</html>

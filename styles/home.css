@@ -103,6 +103,10 @@ hr{
     display: none;
 }
 
+.id{
+    display: none;
+}
+
 .football{
     display: grid;
 }
